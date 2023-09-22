@@ -147,6 +147,10 @@
             height: auto;
         }
 
+        .label-color {
+            color: #4e73df;
+        }
+
     </style>
 
 </head>
@@ -366,32 +370,59 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Rooms</h1>
-                    </div>
-                    
-                    <div class="row">
-                    <!-- Room Selection Dropdown -->
-                    <div class="form-group">
-                        <label for="roomSelect">Select a Room:</label>
-                        <select class="form-control" id="roomSelect">
-                            <option value="room1">Room 1</option>
-                            <option value="room2">Room 2</option>
-                            <option value="room3">Room 3</option>
-                        </select>
-                    </div>
+                        <h1 class="h3 mb-0 text-gray-800">Booking Details :</h1>
                     </div>
 
                     <div class="row">
-                        <div class="col-md-9">
-                            <!-- Room Details -->
-                                <div id="roomDetails" class="card shadow mb-3 room-image">
-                                    <img src="" class="card-img-top" alt="Room Image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Room Name</h5>
-                                        <p class="card-text">Capacity: 20 people</p>
-                                        <p class="card-text">Facilities: Projector, Whiteboard</p>
+                        <div class="col-lg-9">
+                            <!-- Booking Details Card -->
+                            <div class="card mb-3">
+                                <div class="card-header">
+                                    Booking ID: 12345 <!-- Replace with actual booking ID -->
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h5 class="card-title small label-color">Brief Description:</h5>
+                                            <p class="card-text small">Brief description text from the booking</p>
+                                            
+                                            <h5 class="card-title small label-color">Full Description:</h5>
+                                            <p class="card-text small">Full description text from the booking</p>
+                                            
+                                            <h5 class="card-title small label-color">Start Date:</h5>
+                                            <p class="card-text small"><b>07.00 AM 5 Sept 2023</b></p>
+                                            
+                                            <h5 class="card-title small label-color">End Date:</h5>
+                                            <p class="card-text small"><b>09.30 AM 12 Sept 2023</b></p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h5 class="card-title small label-color">Room Selection:</h5>
+                                            <p class="card-text small"><b>Room 1</b></p>
+                                            
+                                            <h5 class="card-title small label-color">Booking Status:</h5>
+                                            <p class="card-text small" style="color:green;"><b>Confirmed</b></p>
+                                            
+                                            <h5 class="card-title small label-color">Booking Type:</h5>
+                                            <p class="card-text small"><b>Internal</b></p>
+                                            
+                                            <h5 class="card-title small label-color">Repeated Event:</h5>
+                                            <p class="card-text small"><b>No</b></p>
+                                            
+                                            <h5 class="card-title small label-color">Repeated Type:</h5>
+                                            <p class="card-text small"><b>-</b></p>
+                                            
+                                            <h5 class="card-title small label-color">Repeated End Date:</h5>
+                                            <p class="card-text small"><b>-</b></p>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="card-footer">
+                                    <button class="btn btn-primary btn-sm">Edit</button>
+                                </div>
+                            </div>
+                            
+                            
+                            
                         </div>
                     </div>
 
@@ -416,49 +447,6 @@
 
     <!-- Page level room page js-->
     <script>
-        // Room data
-        const rooms = {
-            room1: {
-                name: "Room 1",
-                image: "img/room1.png", // Add image URL
-                capacity: "20 people",
-                facilities: "Projector, Whiteboard",
-            },
-            room2: {
-                name: "Room 2",
-                image: "img/room2.jpg", // Add image URL
-                capacity: "15 people",
-                facilities: "Whiteboard",
-            },
-            room3: {
-                name: "Room 3",
-                image: "img/room3.jpg", // Add image URL
-                capacity: "30 people",
-                facilities: "Projector, Whiteboard, Sound System",
-            },
-        };
-
-        // Function to update room details
-        function updateRoomDetails() {
-            const roomSelect = document.getElementById("roomSelect");
-            const selectedRoom = roomSelect.value;
-            const roomDetails = rooms[selectedRoom];
-            const roomDetailsCard = document.getElementById("roomDetails");
-
-            if (roomDetails) {
-                roomDetailsCard.querySelector("img").src = roomDetails.image;
-                roomDetailsCard.querySelector(".card-title").textContent = roomDetails.name;
-                roomDetailsCard.querySelector(".card-text:nth-child(2)").textContent = "Capacity: " + roomDetails.capacity;
-                roomDetailsCard.querySelector(".card-text:nth-child(3)").textContent = "Facilities: " + roomDetails.facilities;
-            }
-        }
-
-        // Event listener for room selection change
-        const roomSelect = document.getElementById("roomSelect");
-        roomSelect.addEventListener("change", updateRoomDetails);
-
-        // Initial update
-        updateRoomDetails();
     </script>
 
 </body>
