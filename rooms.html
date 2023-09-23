@@ -369,9 +369,9 @@
                         <h1 class="h3 mb-0 text-gray-800">Rooms</h1>
                     </div>
                     
-                    <div class="row">
+                    <!-- <div class="row"> -->
                     <!-- Room Selection Dropdown -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="roomSelect">Select a Room:</label>
                         <select class="form-control" id="roomSelect">
                             <option value="room1">Room 1</option>
@@ -379,19 +379,68 @@
                             <option value="room3">Room 3</option>
                         </select>
                     </div>
-                    </div>
+                    </div> -->
 
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col-lg-12">
                             <!-- Room Details -->
-                                <div id="roomDetails" class="card shadow mb-3 room-image">
-                                    <img src="" class="card-img-top" alt="Room Image">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Room Name</h5>
-                                        <p class="card-text">Capacity: 20 people</p>
-                                        <p class="card-text">Facilities: Projector, Whiteboard</p>
+                            <div id="roomDetails" class="card shadow mb-3">
+                                <div class="row no-gutters">
+                                    <!-- Image Column -->
+                                    <div class="col-md-4">
+                                        <img src="img/room1.png" class="card-img" alt="Room Image">
+                                    </div>
+                                    <!-- Details Column -->
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Room Name</h5>
+                                            <p class="card-text">Capacity: 20 people</p>
+                                            <p class="card-text">Facilities: Projector, Whiteboard</p>
+                                            <!-- Book Button -->
+                                            <a href="#" class="btn btn-primary">Book</a>
+                                        </div>
                                     </div>
                                 </div>
+                            </div>                            
+                            
+                            <div id="roomDetails" class="card shadow mb-3">
+                                <div class="row no-gutters">
+                                    <!-- Image Column -->
+                                    <div class="col-md-4">
+                                        <img src="img/room2.jpg" class="card-img" alt="Room Image">
+                                    </div>
+                                    <!-- Details Column -->
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Room Name</h5>
+                                            <p class="card-text">Capacity: 15 people</p>
+                                            <p class="card-text">Facilities: Projector, Whiteboard</p>
+                                            <!-- Book Button -->
+                                            <a href="#" class="btn btn-primary">Book</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            
+                            <div id="roomDetails" class="card shadow mb-3">
+                                <div class="row no-gutters">
+                                    <!-- Image Column -->
+                                    <div class="col-md-4">
+                                        <img src="img/room3.jpg" class="card-img" alt="Room Image">
+                                    </div>
+                                    <!-- Details Column -->
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Room Name</h5>
+                                            <p class="card-text">Capacity: 10 people</p>
+                                            <p class="card-text">Facilities: Whiteboard</p>
+                                            <!-- Book Button -->
+                                            <a href="#" class="btn btn-primary">Book</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                            
+                            
                         </div>
                     </div>
 
@@ -438,27 +487,27 @@
             },
         };
 
-        // Function to update room details
-        function updateRoomDetails() {
-            const roomSelect = document.getElementById("roomSelect");
-            const selectedRoom = roomSelect.value;
-            const roomDetails = rooms[selectedRoom];
-            const roomDetailsCard = document.getElementById("roomDetails");
+        // // Function to update room details
+        // function updateRoomDetails() {
+        //     const roomSelect = document.getElementById("roomSelect");
+        //     const selectedRoom = roomSelect.value;
+        //     const roomDetails = rooms[selectedRoom];
+        //     const roomDetailsCard = document.getElementById("roomDetails");
 
-            if (roomDetails) {
-                roomDetailsCard.querySelector("img").src = roomDetails.image;
-                roomDetailsCard.querySelector(".card-title").textContent = roomDetails.name;
-                roomDetailsCard.querySelector(".card-text:nth-child(2)").textContent = "Capacity: " + roomDetails.capacity;
-                roomDetailsCard.querySelector(".card-text:nth-child(3)").textContent = "Facilities: " + roomDetails.facilities;
-            }
-        }
+        //     if (roomDetails) {
+        //         roomDetailsCard.querySelector("img").src = roomDetails.image;
+        //         roomDetailsCard.querySelector(".card-title").textContent = roomDetails.name;
+        //         roomDetailsCard.querySelector(".card-text:nth-child(2)").textContent = "Capacity: " + roomDetails.capacity;
+        //         roomDetailsCard.querySelector(".card-text:nth-child(3)").textContent = "Facilities: " + roomDetails.facilities;
+        //     }
+        // }
 
-        // Event listener for room selection change
-        const roomSelect = document.getElementById("roomSelect");
-        roomSelect.addEventListener("change", updateRoomDetails);
+        // // Event listener for room selection change
+        // const roomSelect = document.getElementById("roomSelect");
+        // roomSelect.addEventListener("change", updateRoomDetails);
 
-        // Initial update
-        updateRoomDetails();
+        // // Initial update
+        // updateRoomDetails();
     </script>
 
 </body>
