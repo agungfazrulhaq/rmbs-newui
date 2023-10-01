@@ -256,6 +256,7 @@
                             <td>Admin</td>
                             <td>
                                 <button class="btn btn-primary edit-btn" data-toggle="modal" data-target="#editModal">Edit</button>
+                                <button class="btn btn-warning edit-btn" data-toggle="modal" data-target="#changePasswordModal">Change Password</button>
                                 <button class="btn btn-danger delete-btn">Delete</button>
                             </td>
                         </tr>
@@ -282,8 +283,14 @@
                             <input type="text" class="form-control" id="editUserName">
                         </div>
                         <div class="form-group">
-                            <label for="editUserRole">Role:</label>
-                            <input type="text" class="form-control" id="editUserRole">
+                            <label for="addUserRole">Role:</label>
+                            <select class="form-control" id="addUserRole">
+                                <option value="superadmin">Super Admin</option>
+                                <option value="admin">Admin</option>
+                                <option value="supervisor">Supervisor</option>
+                                <option value="user">User</option>
+                                <option value="userassistant">User Assistant</option>
+                            </select>
                         </div>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="editUserStatus">
@@ -323,7 +330,13 @@
                         </div>
                         <div class="form-group">
                             <label for="addUserRole">Role:</label>
-                            <input type="text" class="form-control" id="addUserRole">
+                            <select class="form-control" id="addUserRole">
+                                <option value="superadmin">Super Admin</option>
+                                <option value="admin">Admin</option>
+                                <option value="supervisor">Supervisor</option>
+                                <option value="user">User</option>
+                                <option value="userassistant">User Assistant</option>
+                            </select>
                         </div>
                         <div class="form-check">
                             <input type="checkbox" class="form-check-input" id="addUserStatus">
@@ -338,6 +351,39 @@
             </div>
         </div>
     </div>
+
+     <!-- Change Password Modal -->
+     <div class="modal fade" id="changePasswordModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Change Password</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="currentPassword">Current Password:</label>
+                            <input type="password" class="form-control" id="currentPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="newPassword">New Password:</label>
+                            <input type="password" class="form-control" id="newPassword">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmNewPassword">Confirm New Password:</label>
+                            <input type="password" class="form-control" id="confirmNewPassword">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Change Password</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
