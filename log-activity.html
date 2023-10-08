@@ -19,129 +19,15 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- <link href="css/calendar.css" rel="stylesheet"> -->
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <style>
-        tr.time-row {
-            position: sticky;
-            top: 0;
-            background-color: #f2f2f2;
+        .log-entry {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
         }
-
-        /* Style for the time cells */
-        th.time-cell {
-            position: sticky;
-            left: 0;
-            background-color: #f2f2f2;
-        }
-
-        .has-bookings{
-            background-color: #4e73df;
-        }
-
-        .has-bookings a{
-            text-decoration: none;
-            color:white;
-        }
-
-        .cellClass {
-            vertical-align: middle !important;
-        }
-
-        .cellCal:hover {
-            background-color: aliceblue;
-            opacity: 0.8;
-        }
-
-        .cellConf {
-            color: white;
-            background-color:#4e73df;
-        }
-        .cellConf:hover {
-            color: white;
-            opacity: 0.8;
-        }
-
-        .cellTent {
-            background-color:#fffb82;
-        }
-
-        .cellTent:hover {
-            opacity:0.8;
-        }
-
-        .tooltiptxt {
-        position: relative;
-        /* display: inline-block; */
-        border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
-        }
-
-        /* Tooltip text */
-        .tooltiptxt .tooltiptext {
-        visibility: hidden;
-        max-width: 240px;
-        background-color: white;
-        border:2px solid #4e73df;
-        /* border-color:#4e73df; */
-        color: black;
-        text-align: center;
-        padding: 5px 0;
-        border-radius: 0px 6px 6px 6px;
-        /* width: 120px; */
-        top: 80%;
-        left: 70%;
-        margin-left: -60px;
-
-        
-        /* Position the tooltip text - see examples below! */
-        position: absolute;
-        z-index: 1;
-        }
-
-        /* Show the tooltip text when you mouse over the tooltip container */
-        .tooltiptxt:hover .tooltiptext {
-        visibility: visible;
-        }
-
-        /* Style for the tooltip */
-        .tltip {
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-        }
-
-        .tltip:hover .tltip-text {
-        visibility: visible;
-        opacity: 1;
-        }
-
-        .tltip-text {
-        visibility: hidden;
-        opacity: 0;
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #007bff; /* Background color of the tooltip */
-        color: #fff; /* Text color of the tooltip */
-        padding: 8px;
-        border-radius: 6px;
-        box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
-        white-space: nowrap;
-        z-index: 1;
-        }
-
-        /* Triangle/border arrow at the top of the tooltip */
-        .tltip-text::before {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        margin-left: -5px; /* Half of the arrow's width */
-        border-width: 5px;
-        border-style: solid;
-        border-color: #007bff transparent transparent transparent;
-        }
-
     </style>
 
 </head>
@@ -357,80 +243,63 @@
                     </ul>
 
                 </nav>
+                
+
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Rooms (Admin)</h1>
-                    </div>
+                    <h1 class="h3 mb-2 text-gray-800">Log Activity</h1>
 
-                    <!-- Room 1 -->
-                    <div class="card mb-3">
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary"></h6>
+                        </div>
                         <div class="card-body">
-                            <h5 class="card-title">Room 1</h5>
-                            <p class="card-text">Capacity: 20 people</p>
-                            <p class="card-text">Facilities: Projector, Whiteboard</p>
-                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editRoomModal1">Edit Room</a>
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Role</th>
+                                            <th>Activity</th>
+                                            <th>Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Example Rows -->
+                                        <tr>
+                                            <td>John Doe</td>
+                                            <td>Admin</td>
+                                            <td>Logged in</td>
+                                            <td>September 17, 2023 10:30 AM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Jane Smith</td>
+                                            <td>User</td>
+                                            <td>Updated Profile</td>
+                                            <td>September 17, 2023 11:45 AM</td>
+                                        </tr>
+                                        <!-- Add more example rows here -->
+                                        <tr>
+                                            <td>Robert Johnson</td>
+                                            <td>Supervisor</td>
+                                            <td>Created Report</td>
+                                            <td>September 18, 2023 02:15 PM</td>
+                                        </tr>
+                                        <!-- Add more example rows here -->
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Room 2 -->
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 2</h5>
-                            <p class="card-text">Capacity: 15 people</p>
-                            <p class="card-text">Facilities: Whiteboard</p>
-                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editRoomModal1">Edit Room</a>
-                        </div>
-                    </div>
-
-                    <!-- Room 3 -->
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Room 3</h5>
-                            <p class="card-text">Capacity: 30 people</p>
-                            <p class="card-text">Facilities: Projector, Whiteboard, Sound System</p>
-                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editRoomModal1">Edit Room</a>
-                        </div>
-                    </div>
-                    
                 </div>
 
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="editRoomModal1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Edit Room 1</h5>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="editCapacity1">Capacity:</label>
-                            <input type="text" class="form-control" id="editCapacity1" value="20 people">
-                        </div>
-                        <div class="form-group">
-                            <label for="editFacilities1">Facilities:</label>
-                            <input type="text" class="form-control" id="editFacilities1" value="Projector, Whiteboard">
-                        </div>
-                        <!-- Add an input for uploading a new picture -->
-                        <div class="form-group">
-                            <label for="editPicture1">Upload Picture:</label>
-                            <input type="file" class="form-control-file" id="editPicture1">
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save Changes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -443,6 +312,13 @@
 
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
