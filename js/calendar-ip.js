@@ -134,7 +134,7 @@ function loadWeek(date) {
     startDate.setDate(startDate.getDate() - startDate.getDay());
 
     // Building the header for the days of the week
-    let headerRows = "<tr><td>Time</td>";
+    let headerRows = "<tr class='bg-secondary text-light'><td>Time</td>";
     for (let dayOffset = 0; dayOffset < 7; dayOffset++) {
         let currentDate = new Date(startDate);
         currentDate.setDate(currentDate.getDate() + dayOffset);
@@ -178,7 +178,7 @@ function loadWeek(date) {
                 const weekEndDate = new Date(startDate);
                 weekEndDate.setDate(weekEndDate.getDate() + 6);
 
-                document.getElementById("currentMonthYear").innerText = `${startDate.toLocaleString('default', { day: 'numeric', month: 'short' })} - ${weekEndDate.toLocaleString('default', { day: 'numeric', month: 'short' })}`;
+                document.getElementById("currentMonthYear").innerText = `${startDate.toLocaleString('default', { day: 'numeric', month: 'short', year:'2-digit' })} - ${weekEndDate.toLocaleString('default', { day: 'numeric', month: 'short', year: '2-digit' })}`;
 
                 if (matchingEvent) {
                     const [startHr, startMin] = matchingEvent.time.start.split(':').map(Number);
@@ -212,7 +212,7 @@ loadMonth(today);
 // Event handlers
 $("#weeklyToggle").click((event) => {
     event.preventDefault();
-    weeklyView = !weeklyView;
+    weeklyView = true;
 
     if (weeklyView) {
         $("#monthlyCalendar").hide();
@@ -225,19 +225,25 @@ $("#weeklyToggle").click((event) => {
     }
 });
 
-// $(document).ready(() => {
-//     loadMonth(today);
-//     $("#prevMonth").click(() => {
-//         today = new Date(today.getFullYear(), today.getMonth() - 1);
-//         loadMonth(today);
-//     });
-//     $("#nextMonth").click(() => {
-//         today = new Date(today.getFullYear(), today.getMonth() + 1);
-//         loadMonth(today);
-//     });
-// });
+$("#monthlyToggle").click((event) => {
+    event.preventDefault();
+    weeklyView = false;
 
-$("#prev").click(() => {
+    if (weeklyView) {
+        $("#monthlyCalendar").hide();
+        $("#weeklyCalendar").show();
+        loadWeek(today);
+    } else {
+        $("#monthlyCalendar").show();
+        $("#weeklyCalendar").hide();
+        console.log('its here');
+        loadMonth(today);
+    }
+});
+
+
+$("#prev").click((event) => {
+    event.preventDefault();
     if (weeklyView) {
         today.setDate(today.getDate() - 7);
         loadWeek(today);
@@ -247,7 +253,8 @@ $("#prev").click(() => {
     }
 });
 
-$("#next").click(() => {
+$("#next").click((event) => {
+    event.preventDefault();
     if (weeklyView) {
         today.setDate(today.getDate() + 7);
         loadWeek(today);

@@ -325,7 +325,7 @@
                                             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
                                                 aria-labelledby="dropdownMenuLink">
                                                 <div class="dropdown-header">Display:</div>
-                                                <a class="dropdown-item" href="#">Monthly</a>
+                                                <a class="dropdown-item" id="monthlyToggle" href="#">Monthly</a>
                                                 <a class="dropdown-item" id="weeklyToggle" href="#">Weekly</a>
                                                 <a class="dropdown-item" href="#">Work Week</a>
                                                 <a class="dropdown-item" href="#">List</a>
@@ -334,9 +334,9 @@
                                     </div>
                                 <div class="card-body">
                                 <div class="calendar-header">
-                                    <button id="prev" class="btn btn-primary">Previous</button>
+                                    <a id="prev" class="" href="#"><i class="fas fa-fw fa-chevron-left"></i></a>
                                     <h3 id="currentMonthYear"></h3>
-                                    <button id="next" class="btn btn-primary">Next</button>
+                                    <a id="next" class="" href="#"><i class="fas fa-fw fa-chevron-right"></i></a>
                                 </div>
                                 <table id="monthlyCalendar" class="table table-bordered table-responsive mt-3">
                                     <thead>
@@ -355,7 +355,7 @@
                                 </table>
 
                                 <!-- Weekly Calendar (initially hidden) -->
-                                <table id="weeklyCalendar" class="table table-responsive table-bordered">
+                                <table id="weeklyCalendar" class="table table-responsive table-bordered mt-5">
                                     <!-- This will be populated dynamically using JavaScript -->
                                 </table>
                                 
