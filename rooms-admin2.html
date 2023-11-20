@@ -19,6 +19,11 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- <link href="css/calendar.css" rel="stylesheet"> -->
     <style>
         tr.time-row {
@@ -359,75 +364,73 @@
                 </nav>
                 <div class="container-fluid">
 
-                    <div class="container mt-4">
-                        <div class="row mb-2">
-                            <div class="col">
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addRoomModal">
-                                    Add Room
-                                </button>
-                            </div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addRoomModal">
+                        Add Room
+                    </button>
+                    <div class="card shadow mb-4 mt-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary"></h6>
                         </div>
-                    
-                        <div class="row">
-                            <div class="col">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Room Name</th>
-                                            <th scope="col">Capacity</th>
-                                            <th scope="col">Description</th>
-                                            <th scope="col">Facilities</th>
-                                            <th scope="col">Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Example Room Rows -->
-                                        <tr>
-                                            <td>Sunset Suite</td>
-                                            <td>2</td>
-                                            <td>Cozy room with a sunset view</td>
-                                            <td>Wi-Fi, TV</td>
-                                            <td>
-                                                <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#editRoomModal">Edit</button>
-                                                <button class="btn btn-danger btn-sm">Delete</button>
-                                                <button class="btn btn-secondary btn-sm">Disable</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ocean View</td>
-                                            <td>4</td>
-                                            <td>Spacious room with ocean view</td>
-                                            <td>Wi-Fi, TV, Minibar</td>
-                                            <td>
-                                                <button class="btn btn-info btn-sm">Edit</button>
-                                                <button class="btn btn-danger btn-sm">Delete</button>
-                                                <button class="btn btn-secondary btn-sm">Disable</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mountain Retreat</td>
-                                            <td>3</td>
-                                            <td>Quiet room with mountain view</td>
-                                            <td>Wi-Fi, AC</td>
-                                            <td>
-                                                <button class="btn btn-info btn-sm">Edit</button>
-                                                <button class="btn btn-danger btn-sm">Delete</button>
-                                                <button class="btn btn-secondary btn-sm">Disable</button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Urban Deluxe</td>
-                                            <td>5</td>
-                                            <td>Modern room in urban setting</td>
-                                            <td>Wi-Fi, TV, AC, Minibar</td>
-                                            <td>
-                                                <button class="btn btn-info btn-sm">Edit</button>
-                                                <button class="btn btn-danger btn-sm">Delete</button>
-                                                <button class="btn btn-secondary btn-sm">Disable</button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                        <div class="card-body">
+                            <div class="">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Room Name</th>
+                                        <th scope="col">Capacity</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Facilities</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Example Room Rows -->
+                                    <tr>
+                                        <td>Sunset Suite</td>
+                                        <td>2</td>
+                                        <td>Cozy room with a sunset view</td>
+                                        <td>Wi-Fi, TV</td>
+                                        <td>
+                                            <button class="btn btn-info btn-sm" data-toggle="modal" data-target="#editRoomModal">Edit</button>
+                                            <button class="btn btn-danger btn-sm">Delete</button>
+                                            <button class="btn btn-secondary btn-sm">Disable</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ocean View</td>
+                                        <td>4</td>
+                                        <td>Spacious room with ocean view</td>
+                                        <td>Wi-Fi, TV, Minibar</td>
+                                        <td>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                            <button class="btn btn-danger btn-sm">Delete</button>
+                                            <button class="btn btn-secondary btn-sm">Disable</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Mountain Retreat</td>
+                                        <td>3</td>
+                                        <td>Quiet room with mountain view</td>
+                                        <td>Wi-Fi, AC</td>
+                                        <td>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                            <button class="btn btn-danger btn-sm">Delete</button>
+                                            <button class="btn btn-secondary btn-sm">Disable</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Urban Deluxe</td>
+                                        <td>5</td>
+                                        <td>Modern room in urban setting</td>
+                                        <td>Wi-Fi, TV, AC, Minibar</td>
+                                        <td>
+                                            <button class="btn btn-info btn-sm">Edit</button>
+                                            <button class="btn btn-danger btn-sm">Delete</button>
+                                            <button class="btn btn-secondary btn-sm">Disable</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             </div>
                         </div>
                     </div>
@@ -489,7 +492,6 @@
     </div>
 
     <!-- Edit Room Modal -->
-    <!-- Edit Room Modal -->
     <div class="modal fade" id="editRoomModal" tabindex="-1" role="dialog" aria-labelledby="editRoomModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -549,7 +551,11 @@
     <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/datatables-demo.js"></script>
 
 </body>
 
